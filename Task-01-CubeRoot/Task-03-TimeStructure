@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+struct mytime {
+    int hours;
+    int minutes;
+    int seconds;
+};
+
+long calculatesecs(mytime t1) {
+    long a = t1.hours * 3600 + t1.minutes * 60 + t1.seconds;
+    return a;
+}
+
+int main() {
+    mytime t1;
+
+    cout << "Enter a time value in hours: ";
+    cin >> t1.hours;
+
+    cout << "Enter a time value in minutes: ";
+    cin >> t1.minutes;
+
+    cout << "Enter a time value in seconds: ";
+    cin >> t1.seconds;
+
+    // Output total seconds
+    cout << "Total seconds: " << calculatesecs(t1) << endl;
+
+    return 0;
+}
