@@ -1,0 +1,52 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+struct subject_information
+{
+    string subject_name;
+    int credit_hours;
+    int total_marks;
+    char grade;
+    double grade_point;
+};
+struct student_information
+{
+    string student_name;
+    string roll_no;
+    subject_information subjects[5];
+};
+int main ()
+{
+ student_information s;
+ s.student_name = "Rabbia";
+ s.roll_no = "09-131252-070";
+ s.subjects [0] = {"Programming Fundamentals", 4, 88, 'A', 4.0};
+
+    s.subjects[1] = {"Compiler Construction", 3, 87, 'A', 4.0};
+
+    s.subjects[2] = {"OOP", 3, 90, 'A', 4.0};
+
+    s.subjects[3] = {"English", 3, 94, 'A', 4.0};
+
+    s.subjects[4] = {"Physics", 4, 89, 'A', 4.0};
+    double grade_points = 0;
+    int credit_hours = 0;
+
+cout << s.student_name << endl;
+cout << s.roll_no << endl;
+for ( int i=0 ; i<5; i++)
+{
+    cout <<s.subjects[i].subject_name<<endl;
+    cout <<s.subjects[i].credit_hours<<endl;
+    cout <<s.subjects[i].total_marks<<endl;
+    cout <<s.subjects[i]. grade<<endl;
+    cout <<s.subjects[i].grade_point<< endl;
+ grade_points += (s.subjects[i].grade_point * s.subjects[i].credit_hours);
+        credit_hours += s.subjects[i].credit_hours;
+}
+        double cgpa = grade_points / credit_hours;
+    cout << "CGPA is : " << cgpa << endl;
+
+    return 0;
+}
